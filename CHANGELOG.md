@@ -21,4 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   route hints, including a Warsaw (ZTM) helper in `gtfs_rt_kit.warsaw`.
 - Delay computation against the schedule (`trip_delays`, `estimate_vehicle_delay`),
   handling times past midnight and daylight-saving changes.
+- `gtfs-rt-kit` command line tool with `vehicles`, `trip-updates` and `alerts` commands,
+  reading from a URL, a file or stdin, with route filters, static GTFS matching and JSON output.
+- `to_jsonable()` helper converting models to JSON-compatible data.
 - Project skeleton: packaging with hatchling, MIT license, CI on Python 3.10-3.13.
