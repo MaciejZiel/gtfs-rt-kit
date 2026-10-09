@@ -1,0 +1,83 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gtfs-rt-kit"
+dynamic = ["version"]
+description = "Typed client and toolkit for GTFS-Realtime feeds and static GTFS schedules."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{ name = "Maciej Zieliński" }]
+keywords = ["gtfs", "gtfs-realtime", "gtfs-rt", "public transport", "transit", "protobuf"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: GIS",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/MaciejZiel/gtfs-rt-kit"
+Repository = "https://github.com/MaciejZiel/gtfs-rt-kit"
+Issues = "https://github.com/MaciejZiel/gtfs-rt-kit/issues"
+Changelog = "https://github.com/MaciejZiel/gtfs-rt-kit/blob/main/CHANGELOG.md"
+
+[dependency-groups]
+dev = [
+  "pytest>=9.0",
+  "pytest-cov>=7.0",
+  "ruff>=0.16",
+  "mypy>=2.3",
+]
+
+[tool.hatch.version]
+path = "src/gtfs_rt_kit/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gtfs_rt_kit"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/gtfs_rt_kit", "tests", "CHANGELOG.md", "README.md", "LICENSE", "3rdparty_licenses.md"]
+
+[tool.uv]
+# Only resolve releases that have been public for at least two weeks.
+exclude-newer = "2026-09-26T00:00:00Z"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "RUF", "PT", "C4", "RET", "TID"]
+
+[tool.mypy]
+strict = true
+python_version = "3.10"
+files = ["src", "tests"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["gtfs_rt_kit"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true
+skip_covered = true
+exclude_also = ["if TYPE_CHECKING:", "raise NotImplementedError", "@overload"]
