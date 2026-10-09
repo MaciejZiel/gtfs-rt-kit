@@ -54,6 +54,11 @@ dev = [
   "mypy>=2.3",
   "types-protobuf>=7.34",
 ]
+docs = [
+    "mkdocs>=1.6,<2",
+    "mkdocs-material>=9.7",
+    "mkdocstrings-python>=2.0",
+]
 
 [tool.hatch.version]
 path = "src/gtfs_rt_kit/__init__.py"
@@ -62,7 +67,7 @@ path = "src/gtfs_rt_kit/__init__.py"
 packages = ["src/gtfs_rt_kit"]
 
 [tool.hatch.build.targets.sdist]
-include = ["src/gtfs_rt_kit", "tests", "CHANGELOG.md", "README.md", "LICENSE", "3rdparty_licenses.md"]
+include = ["src/gtfs_rt_kit", "tests", "examples", "CHANGELOG.md", "README.md", "LICENSE", "3rdparty_licenses.md"]
 
 [tool.uv]
 # Only resolve releases that have been public for at least two weeks.
@@ -79,7 +84,7 @@ select = ["E", "W", "F", "I", "B", "UP", "SIM", "RUF", "PT", "C4", "RET", "TID"]
 [tool.mypy]
 strict = true
 python_version = "3.10"
-files = ["src", "tests"]
+files = ["src", "tests", "examples"]
 
 [tool.pytest.ini_options]
 addopts = "-ra --strict-markers"

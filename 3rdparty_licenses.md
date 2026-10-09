@@ -19,3 +19,9 @@ documentation tooling, and CI actions). Only permissively licensed components ar
 | https://pypi.org/project/httpx/ | httpx (optional `http` extra) | BSD-3-Clause | https://github.com/encode/httpx/blob/master/LICENSE.md |
 | https://pypi.org/project/anyio/ | anyio (via httpx; pytest plugin in tests) | MIT | https://github.com/agronholm/anyio/blob/master/LICENSE |
 | https://pypi.org/project/tzdata/ | tzdata (Windows only, for zoneinfo) | Apache-2.0 | https://github.com/python/tzdata/blob/master/LICENSE |
+| https://pypi.org/project/mkdocs/ | mkdocs (docs) | BSD-2-Clause | https://github.com/mkdocs/mkdocs/blob/master/LICENSE |
+| https://pypi.org/project/mkdocs-material/ | mkdocs-material (docs) | MIT | https://github.com/squidfunk/mkdocs-material/blob/master/LICENSE |
+| https://pypi.org/project/mkdocstrings-python/ | mkdocstrings-python (docs) | ISC | https://github.com/mkdocstrings/python/blob/main/LICENSE |
+| https://pypi.org/project/mkdocstrings/ | mkdocstrings (docs, via mkdocstrings-python) | ISC | https://github.com/mkdocstrings/mkdocstrings/blob/main/LICENSE |
+| https://github.com/actions/upload-pages-artifact | actions/upload-pages-artifact (CI) | MIT | https://github.com/actions/upload-pages-artifact/blob/main/LICENSE |
+| https://github.com/actions/deploy-pages | actions/deploy-pages (CI) | MIT | https://github.com/actions/deploy-pages/blob/main/LICENSE |
