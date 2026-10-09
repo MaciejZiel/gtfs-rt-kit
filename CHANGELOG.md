@@ -24,4 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `gtfs-rt-kit` command line tool with `vehicles`, `trip-updates` and `alerts` commands,
   reading from a URL, a file or stdin, with route filters, static GTFS matching and JSON output.
 - `to_jsonable()` helper converting models to JSON-compatible data.
+- Documentation site (MkDocs Material) with guides, Warsaw and generic examples and an API
+  reference, deployed to GitHub Pages.
 - Project skeleton: packaging with hatchling, MIT license, CI on Python 3.10-3.13.
