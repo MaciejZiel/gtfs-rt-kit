@@ -37,6 +37,11 @@ Repository = "https://github.com/MaciejZiel/gtfs-rt-kit"
 Issues = "https://github.com/MaciejZiel/gtfs-rt-kit/issues"
 Changelog = "https://github.com/MaciejZiel/gtfs-rt-kit/blob/main/CHANGELOG.md"
 
+[project.optional-dependencies]
+http = [
+    "httpx>=0.28",
+]
+
 [dependency-groups]
 dev = [
   "pytest>=9.0",
