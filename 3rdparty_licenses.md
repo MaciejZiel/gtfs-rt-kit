@@ -25,3 +25,6 @@ documentation tooling, and CI actions). Only permissively licensed components ar
 | https://pypi.org/project/mkdocstrings/ | mkdocstrings (docs, via mkdocstrings-python) | ISC | https://github.com/mkdocstrings/mkdocstrings/blob/main/LICENSE |
 | https://github.com/actions/upload-pages-artifact | actions/upload-pages-artifact (CI) | MIT | https://github.com/actions/upload-pages-artifact/blob/main/LICENSE |
 | https://github.com/actions/deploy-pages | actions/deploy-pages (CI) | MIT | https://github.com/actions/deploy-pages/blob/main/LICENSE |
+| https://github.com/actions/upload-artifact | actions/upload-artifact (CI) | MIT | https://github.com/actions/upload-artifact/blob/main/LICENSE |
+| https://github.com/actions/download-artifact | actions/download-artifact (CI) | MIT | https://github.com/actions/download-artifact/blob/main/LICENSE |
+| https://github.com/pypa/gh-action-pypi-publish | pypa/gh-action-pypi-publish (CI) | BSD-3-Clause | https://github.com/pypa/gh-action-pypi-publish/blob/unstable/v1/LICENSE.md |
