@@ -1,0 +1,69 @@
+site_name: gtfs-rt-kit
+site_description: Typed Python client and toolkit for GTFS-Realtime feeds and static GTFS schedules.
+site_url: https://maciejziel.github.io/gtfs-rt-kit/
+repo_url: https://github.com/MaciejZiel/gtfs-rt-kit
+repo_name: MaciejZiel/gtfs-rt-kit
+edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2026 Maciej Zieliński
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: red
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: red
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Guide:
+      - Realtime feeds: realtime.md
+      - Static GTFS: static.md
+      - Matching and delays: matching.md
+      - Command line: cli.md
+  - Examples:
+      - Warsaw (ZTM): examples/warsaw.md
+      - Any GTFS-Realtime feed: examples/generic.md
+  - API reference: api.md
+  - Changelog: changelog.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            show_source: false
+            show_root_heading: true
+            show_signature_annotations: true
+            separate_signature: true
+            members_order: source
+            merge_init_into_class: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.tabbed:
+      alternate_style: true
