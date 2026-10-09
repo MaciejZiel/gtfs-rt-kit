@@ -32,6 +32,9 @@ dependencies = [
     "tzdata>=2025.2 ; sys_platform == 'win32'",
 ]
 
+[project.scripts]
+gtfs-rt-kit = "gtfs_rt_kit.cli:main_entry"
+
 [project.urls]
 Homepage = "https://github.com/MaciejZiel/gtfs-rt-kit"
 Repository = "https://github.com/MaciejZiel/gtfs-rt-kit"
@@ -84,6 +87,7 @@ testpaths = ["tests"]
 
 [tool.coverage.run]
 source = ["gtfs_rt_kit"]
+omit = ["*/gtfs_rt_kit/__main__.py"]
 branch = true
 
 [tool.coverage.report]
