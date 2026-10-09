@@ -67,7 +67,7 @@ path = "src/gtfs_rt_kit/__init__.py"
 packages = ["src/gtfs_rt_kit"]
 
 [tool.hatch.build.targets.sdist]
-include = ["src/gtfs_rt_kit", "tests", "examples", "CHANGELOG.md", "README.md", "LICENSE", "3rdparty_licenses.md"]
+include = ["src/gtfs_rt_kit", "tests", "examples", "CHANGELOG.md", "README.md", "RELEASING.md", "LICENSE", "3rdparty_licenses.md"]
 
 [tool.uv]
 # Only resolve releases that have been public for at least two weeks.
