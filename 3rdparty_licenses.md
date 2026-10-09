@@ -18,3 +18,4 @@ documentation tooling, and CI actions). Only permissively licensed components ar
 | https://pypi.org/project/types-protobuf/ | types-protobuf (dev) | Apache-2.0 | https://github.com/python/typeshed/blob/main/LICENSE |
 | https://pypi.org/project/httpx/ | httpx (optional `http` extra) | BSD-3-Clause | https://github.com/encode/httpx/blob/master/LICENSE.md |
 | https://pypi.org/project/anyio/ | anyio (via httpx; pytest plugin in tests) | MIT | https://github.com/agronholm/anyio/blob/master/LICENSE |
+| https://pypi.org/project/tzdata/ | tzdata (Windows only, for zoneinfo) | Apache-2.0 | https://github.com/python/tzdata/blob/master/LICENSE |
