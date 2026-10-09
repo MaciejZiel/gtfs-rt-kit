@@ -26,7 +26,10 @@ classifiers = [
   "Topic :: Software Development :: Libraries :: Python Modules",
   "Typing :: Typed",
 ]
-dependencies = []
+dependencies = [
+    "gtfs-realtime-bindings>=3.0",
+    "protobuf>=7.34",
+]
 
 [project.urls]
 Homepage = "https://github.com/MaciejZiel/gtfs-rt-kit"
@@ -40,6 +43,7 @@ dev = [
   "pytest-cov>=7.0",
   "ruff>=0.16",
   "mypy>=2.3",
+  "types-protobuf>=7.34",
 ]
 
 [tool.hatch.version]
