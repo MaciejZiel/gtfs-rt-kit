@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-10-10
+
+First public release.
+
 ### Added
 
 - Typed, immutable models for GTFS-Realtime feeds: vehicle positions, trip updates
@@ -26,4 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `to_jsonable()` helper converting models to JSON-compatible data.
 - Documentation site (MkDocs Material) with guides, Warsaw and generic examples and an API
   reference, deployed to GitHub Pages.
-- Project skeleton: packaging with hatchling, MIT license, CI on Python 3.10-3.13.
+- Packaging with hatchling, `py.typed` marker, CI on Python 3.10-3.13 and a release
+  workflow publishing to PyPI with Trusted Publishing.
+
+[Unreleased]: https://github.com/MaciejZiel/gtfs-rt-kit/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/MaciejZiel/gtfs-rt-kit/releases/tag/v0.1.0

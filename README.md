@@ -128,6 +128,9 @@ uv sync --all-extras --group docs && uv run mkdocs serve
 Test fixtures live in `tests/fixtures`; regenerate the realtime feeds with
 `uv run python tests/fixtures/make_fixtures.py`.
 
+Releases are published to PyPI from version tags via Trusted Publishing; see
+[RELEASING.md](https://github.com/MaciejZiel/gtfs-rt-kit/blob/main/RELEASING.md).
+
 ## License
 
 [MIT](https://github.com/MaciejZiel/gtfs-rt-kit/blob/main/LICENSE) © 2026 Maciej Zieliński. Third-party components are listed in
