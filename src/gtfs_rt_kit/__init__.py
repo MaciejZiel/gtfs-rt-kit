@@ -5,7 +5,9 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Any
 
 from .decode import load_feed, parse_feed
+from .delay import StopDelay, estimate_vehicle_delay, scheduled_datetime, trip_delays
 from .errors import FeedDecodeError, FeedFetchError, GtfsRtKitError, StaticGtfsError
+from .matching import MatchedVehicle, filter_by_route, match_vehicle, match_vehicles
 from .models import (
     Alert,
     EntitySelector,
@@ -23,6 +25,7 @@ from .models import (
     VehiclePosition,
 )
 from .retry import RetryPolicy
+from .static import Agency, Route, StaticGtfs, Stop, StopTime, Trip
 
 if TYPE_CHECKING:
     from .client import AsyncGtfsRtClient, GtfsRtClient
@@ -30,6 +33,7 @@ if TYPE_CHECKING:
 __version__ = "0.1.0"
 
 __all__ = [
+    "Agency",
     "Alert",
     "AsyncGtfsRtClient",
     "EntitySelector",
@@ -39,21 +43,34 @@ __all__ = [
     "FeedHeader",
     "GtfsRtClient",
     "GtfsRtKitError",
+    "MatchedVehicle",
     "Position",
     "RetryPolicy",
+    "Route",
+    "StaticGtfs",
     "StaticGtfsError",
+    "Stop",
+    "StopDelay",
+    "StopTime",
     "StopTimeEvent",
     "StopTimeUpdate",
     "TimeRange",
     "TranslatedString",
     "Translation",
+    "Trip",
     "TripDescriptor",
     "TripUpdate",
     "VehicleDescriptor",
     "VehiclePosition",
     "__version__",
+    "estimate_vehicle_delay",
+    "filter_by_route",
     "load_feed",
+    "match_vehicle",
+    "match_vehicles",
     "parse_feed",
+    "scheduled_datetime",
+    "trip_delays",
 ]
 
 

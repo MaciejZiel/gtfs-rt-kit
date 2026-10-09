@@ -29,6 +29,7 @@ classifiers = [
 dependencies = [
     "gtfs-realtime-bindings>=3.0",
     "protobuf>=7.34",
+    "tzdata>=2025.2 ; sys_platform == 'win32'",
 ]
 
 [project.urls]

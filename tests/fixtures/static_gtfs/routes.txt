@@ -1,0 +1,5 @@
+route_id,agency_id,route_short_name,route_long_name,route_type,route_color,route_text_color
+15,ZTM,15,Marymont - P+R Al. Krakowska,0,B60000,FFFFFF
+175,ZTM,175,Lotnisko Chopina - Plac Piłsudskiego,3,,
+M1,ZTM,M1,Kabaty - Młociny,1,,
+N91,ZTM,N91,Nocna,700,,

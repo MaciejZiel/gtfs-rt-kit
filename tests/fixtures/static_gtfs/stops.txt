@@ -1,0 +1,5 @@
+stop_id,stop_name,stop_lat,stop_lon,stop_code,location_type,parent_station
+S1,Centrum,52.2311,21.0108,01,0,
+S2,Plac Zawiszy,52.2249,20.9890,02,0,
+S3,Dworzec Zachodni,52.2201,20.9650,03,0,
+S4,Lotnisko Chopina,52.1700,20.9730,,,
