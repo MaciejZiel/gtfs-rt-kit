@@ -23,7 +23,7 @@
 
 <p align="center">Covers <a href="https://gtfs.org/realtime/">GTFS-Realtime</a> feeds (vehicle positions, trip updates, service alerts) plus helpers for <a href="https://gtfs.org/schedule/">static GTFS</a> archives.</p>
 
-## ✨ Features
+## Features
 
 - **Typed models**: frozen dataclasses, timezone-aware datetimes, enum names; `mypy --strict` clean.
 - **Sync and async clients** on [httpx](https://www.python-httpx.org/) with timeouts, exponential backoff and `Retry-After`.
@@ -31,7 +31,7 @@
 - **Matching and delays**: vehicles to trips and routes, predictions vs. the timetable (overnight trips and DST handled).
 - **CLI**: `gtfs-rt-kit vehicles <url> --route 15 --json`.
 
-## 📦 Installation
+## Installation
 
 ```bash
 pip install "gtfs-rt-kit[http]"   # with the HTTP clients (httpx)
@@ -40,7 +40,7 @@ pip install gtfs-rt-kit           # decoding and static GTFS only
 
 Python 3.10-3.13.
 
-## 🚀 Usage
+## Usage
 
 ### Fetch and decode a feed
 
@@ -111,14 +111,14 @@ $ gtfs-rt-kit alerts https://mkuran.pl/gtfs/warsaw/alerts.pb --lang pl --active
 The source can be a URL, a `.pb` file or `-` for stdin. Other options: `--static` (match against a
 static GTFS zip), `--at ISO_TIME` (alerts active at a given time), `--timeout` and `--retries`.
 
-## 🧩 Examples
+## Examples
 
 - [`examples/warsaw_live.py`](https://github.com/MaciejZiel/gtfs-rt-kit/blob/main/examples/warsaw_live.py): live Warsaw (ZTM) vehicles of a line,
   matched to the timetable, with alerts.
 - [`examples/generic_feed.py`](https://github.com/MaciejZiel/gtfs-rt-kit/blob/main/examples/generic_feed.py): summary and most delayed trips of
   any GTFS-Realtime feed, using the async client.
 
-## 🔌 API overview
+## API overview
 
 | Area | API |
 | --- | --- |
@@ -133,7 +133,7 @@ static GTFS zip), `--at ISO_TIME` (alerts active at a given time), `--timeout` a
 
 See the [API reference](https://maciejziel.github.io/gtfs-rt-kit/api/) for details.
 
-## 🛠 Tech stack
+## Tech stack
 
 | Layer | Used |
 |---|---|
@@ -142,7 +142,7 @@ See the [API reference](https://maciejziel.github.io/gtfs-rt-kit/api/) for detai
 | Docs | MkDocs, Material for MkDocs, mkdocstrings |
 | Quality | pytest, ruff, mypy (strict) |
 
-## 🧪 Development
+## Development
 
 ```bash
 uv sync --all-extras          # runtime, http extra and dev tools
@@ -158,7 +158,7 @@ Test fixtures live in `tests/fixtures`; regenerate the realtime feeds with
 Releases are published to PyPI from version tags via Trusted Publishing; see
 [RELEASING.md](https://github.com/MaciejZiel/gtfs-rt-kit/blob/main/RELEASING.md).
 
-## 📄 Licence
+## Licence
 
 [MIT](https://github.com/MaciejZiel/gtfs-rt-kit/blob/main/LICENSE) © 2026 Maciej Zieliński. Third-party components are listed in
 [3rdparty_licenses.md](https://github.com/MaciejZiel/gtfs-rt-kit/blob/main/3rdparty_licenses.md).
