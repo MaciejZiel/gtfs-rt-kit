@@ -68,14 +68,15 @@ asyncio.run(main())
 ### Static GTFS, matching and delays
 
 ```python
-from gtfs_rt_kit import StaticGtfs, filter_by_route, match_vehicles, trip_delays
+from gtfs_rt_kit import StaticGtfs, filter_by_route, load_feed, match_vehicles, trip_delays
 
 gtfs = StaticGtfs("gtfs.zip")  # lazy: nothing is parsed yet
-matched = match_vehicles(feed, gtfs)
+matched = match_vehicles(feed, gtfs)  # `feed` from the first example
 for item in filter_by_route(matched, "15"):  # route id or short name
     print(item.vehicle.vehicle_id, item.line, item.mode, item.trip and item.trip.headsign)
 
-update = updates_feed.trip_update_for(trip_id)
+updates_feed = load_feed("trip_updates.pb")  # or client.fetch(...)
+update = updates_feed.trip_update_for("T15-1")  # a trip id from your feed
 for stop in trip_delays(update, gtfs):
     print(stop.stop_id, stop.scheduled, stop.predicted, stop.delay)
 ```
