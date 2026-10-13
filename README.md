@@ -112,11 +112,12 @@ static GTFS zip), `--at ISO_TIME` (alerts active at a given time), `--timeout` a
 | Area | API |
 | --- | --- |
 | Decoding | `parse_feed`, `load_feed`, `Feed`, `FeedHeader` |
-| Models | `VehiclePosition`, `TripUpdate`, `StopTimeUpdate`, `StopTimeEvent`, `Alert`, `TripDescriptor`, `VehicleDescriptor`, `Position`, `TranslatedString`, `TimeRange`, `EntitySelector` |
+| Models | `VehiclePosition`, `TripUpdate`, `StopTimeUpdate`, `StopTimeEvent`, `Alert`, `TripDescriptor`, `VehicleDescriptor`, `Position`, `TranslatedString`, `Translation`, `TimeRange`, `EntitySelector` |
 | HTTP (`http` extra) | `GtfsRtClient`, `AsyncGtfsRtClient`, `RetryPolicy` |
 | Static GTFS | `StaticGtfs`, `Agency`, `Stop`, `Route`, `Trip`, `StopTime`, `parse_gtfs_time` |
 | Matching | `match_vehicles`, `match_vehicle`, `filter_by_route`, `MatchedVehicle`, `gtfs_rt_kit.warsaw` |
 | Delays | `trip_delays`, `StopDelay`, `estimate_vehicle_delay`, `scheduled_datetime` |
+| Serialization | `gtfs_rt_kit.serialize.to_jsonable` |
 | Errors | `GtfsRtKitError`, `FeedDecodeError`, `FeedFetchError`, `StaticGtfsError` |
 
 See the [API reference](https://maciejziel.github.io/gtfs-rt-kit/api/) for details.
