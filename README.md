@@ -68,19 +68,22 @@ asyncio.run(main())
 ### Static GTFS, matching and delays
 
 ```python
-from gtfs_rt_kit import StaticGtfs, filter_by_route, match_vehicles, trip_delays
+from gtfs_rt_kit import StaticGtfs, filter_by_route, load_feed, match_vehicles, trip_delays
 
 gtfs = StaticGtfs("gtfs.zip")  # lazy: nothing is parsed yet
-matched = match_vehicles(feed, gtfs)
+matched = match_vehicles(feed, gtfs)  # `feed` from the first example
 for item in filter_by_route(matched, "15"):  # route id or short name
     print(item.vehicle.vehicle_id, item.line, item.mode, item.trip and item.trip.headsign)
 
-update = updates_feed.trip_update_for(trip_id)
+updates_feed = load_feed("trip_updates.pb")  # or client.fetch(...)
+update = updates_feed.trip_update_for("T15-1")  # a trip id from your feed
 for stop in trip_delays(update, gtfs):
     print(stop.stop_id, stop.scheduled, stop.predicted, stop.delay)
 ```
 
 ### Command line
+
+Example output (live data, so yours will differ):
 
 ```console
 $ gtfs-rt-kit vehicles https://mkuran.pl/gtfs/warsaw/vehicles.pb --warsaw --route N91
@@ -94,6 +97,9 @@ $ gtfs-rt-kit trip-updates https://example.org/trip_updates.pb --static gtfs.zip
 $ gtfs-rt-kit alerts https://mkuran.pl/gtfs/warsaw/alerts.pb --lang pl --active
 ```
 
+The source can be a URL, a `.pb` file or `-` for stdin. Other options: `--static` (match against a
+static GTFS zip), `--at ISO_TIME` (alerts active at a given time), `--timeout` and `--retries`.
+
 ## Examples
 
 - [`examples/warsaw_live.py`](https://github.com/MaciejZiel/gtfs-rt-kit/blob/main/examples/warsaw_live.py): live Warsaw (ZTM) vehicles of a line,
@@ -106,11 +112,12 @@ $ gtfs-rt-kit alerts https://mkuran.pl/gtfs/warsaw/alerts.pb --lang pl --active
 | Area | API |
 | --- | --- |
 | Decoding | `parse_feed`, `load_feed`, `Feed`, `FeedHeader` |
-| Models | `VehiclePosition`, `TripUpdate`, `StopTimeUpdate`, `StopTimeEvent`, `Alert`, `TripDescriptor`, `VehicleDescriptor`, `Position`, `TranslatedString`, `TimeRange`, `EntitySelector` |
+| Models | `VehiclePosition`, `TripUpdate`, `StopTimeUpdate`, `StopTimeEvent`, `Alert`, `TripDescriptor`, `VehicleDescriptor`, `Position`, `TranslatedString`, `Translation`, `TimeRange`, `EntitySelector` |
 | HTTP (`http` extra) | `GtfsRtClient`, `AsyncGtfsRtClient`, `RetryPolicy` |
 | Static GTFS | `StaticGtfs`, `Agency`, `Stop`, `Route`, `Trip`, `StopTime`, `parse_gtfs_time` |
 | Matching | `match_vehicles`, `match_vehicle`, `filter_by_route`, `MatchedVehicle`, `gtfs_rt_kit.warsaw` |
 | Delays | `trip_delays`, `StopDelay`, `estimate_vehicle_delay`, `scheduled_datetime` |
+| Serialization | `gtfs_rt_kit.serialize.to_jsonable` |
 | Errors | `GtfsRtKitError`, `FeedDecodeError`, `FeedFetchError`, `StaticGtfsError` |
 
 See the [API reference](https://maciejziel.github.io/gtfs-rt-kit/api/) for details.
