@@ -83,6 +83,8 @@ for stop in trip_delays(update, gtfs):
 
 ### Command line
 
+Example output (live data, so yours will differ):
+
 ```console
 $ gtfs-rt-kit vehicles https://mkuran.pl/gtfs/warsaw/vehicles.pb --warsaw --route N91
 VEHICLE    LINE  TRIP                         LAT       LON       TIMESTAMP
@@ -94,6 +96,9 @@ $ gtfs-rt-kit vehicles https://example.org/vehicle_positions.pb --route 15 --jso
 $ gtfs-rt-kit trip-updates https://example.org/trip_updates.pb --static gtfs.zip
 $ gtfs-rt-kit alerts https://mkuran.pl/gtfs/warsaw/alerts.pb --lang pl --active
 ```
+
+The source can be a URL, a `.pb` file or `-` for stdin. Other options: `--static` (match against a
+static GTFS zip), `--at ISO_TIME` (alerts active at a given time), `--timeout` and `--retries`.
 
 ## Examples
 
